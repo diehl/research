@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Exploring Complex, Dynamic Graph Data - Part 2 &middot; Navigating The Edge</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Navigating The Edge" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Navigating The Edge</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/presentations/">
+                
+                <span>Presentations</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/publications/">
+                
+                <span>Publications</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Chris Diehl
+        <br>
+        <span>on&nbsp;</span><time datetime="2011-01-27 19:00:21 -0700 MST">January 27, 2011</time>
+</div>
+
+		<h1 class="post-title">Exploring Complex, Dynamic Graph Data - Part 2</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>In my first post, I advanced the idea that in order to conduct exploratory data analysis (EDA) we need four basic capabilities: <em>persistence, query, analysis and visualization</em>. Moving forward, I want to talk about specific approaches and capabilities I&rsquo;ve examined that I believe provide value for EDA. In this post, we&rsquo;ll focus on mechanisms for persistence and query.</p>
+<p>If you&rsquo;ve paid even the slightest attention to recent advances in the database world, it should be clear that the array of available capabilities is ever increasing. The <a href="http://en.wikipedia.org/wiki/NoSQL">NoSQL</a> movement is responsible for many of the newest arrivals. I focused on NoSQL databases because of the appeal of a schemaless database. When conducting EDA, we don&rsquo;t yet understand the patterns in the data that are of interest. In addition, we may have an evolving list of questions we wish to ask of the data. Therefore any mechanism that simplifies data representation and conditioning, so that we may cycle faster in our exploration, is a benefit.</p>
+<p>One of the first questions I considered when attempting to prune the space of candidates is: should I use a graph database? This immediately led to another question: how is a graph database distinct from other databases? Some have advanced the <a href="http://www.slideshare.net/slidarko/graph-databases-trends-in-the-web-of-data">definition</a> that &ldquo;a graph database is any storage system that provides index-free adjacency.&rdquo; Stated more simply, a graph database is a storage system that captures an explicit representation of a graph. With index-free adjacency, one-hop traversals in the graph become constant time operations, giving graph databases the edge when deep traversals of the graph are required.</p>
+<p>When first considering the question of whether or not to use a graph database, I viewed the question from an either/or perspective where the goal was to choose one database. Later on, it became clear that this was a limited way to think about the problem. Different classes of databases have their use cases at which they excel. It is possible that no one class of database will provide all the capabilities required. When working with social media data that presents both rich structured and unstructured data, <a href="http://www.slideshare.net/jwoodslideshare/polyglot-persistence-two-great-tastes-that-taste-great-together-4625004">polyglot persistence</a> seems more appropriate. This allows one to use a graph database to capture the multi-relational graph structure while another database represents the unstructured attribute data.</p>
+<p>Having decided to use a graph database to represent aspects of my data, I turned my attention toward graph query languages to understand how this further constrained the viable database options. It is during this search that I discovered the graph traversal language called <a href="https://github.com/tinkerpop/gremlin/wiki/">Gremlin</a> developed by <a href="http://markorodriguez.com/">Marko Rodriguez</a>. <a href="http://www.tinkerpop.com/">Marko and several others</a> have been hard at work since November 2009 developing a graph processing stack that allows one to persist and process general <a href="https://github.com/tinkerpop/gremlin/wiki/Defining-a-Property-Graph">property graphs</a> using one of several available graph databases. Currently the stack supports <a href="http://neo4j.org/">Neo4j</a>, OrientDB, RDF Sail and an in-memory graph database called TinkerGraph. Support for <a href="http://redis.io/">Redis</a>, <a href="http://www.infinitegraph.com/">InfiniteGraph</a> and <a href="http://www.sparsity-technologies.com/dex.php">DEX</a> is planned for future releases.</p>
+<p>While perusing the <a href="https://github.com/tinkerpop/gremlin/wiki/">Gremlin documentation</a> and Marko&rsquo;s <a href="http://www.slideshare.net/slidarko">presentations</a>, it became clear that Gremlin has the potential to provide significant utility for EDA by simplifying the implementation of complex <a href="http://en.wikipedia.org/wiki/Graph_rewriting">graph rewriting</a> operations. This is significant because of the core data representation challenge I alluded to earlier. During EDA, we are not yet aware of the underlying patterns in the data. Therefore we do not understand what representations are most appropriate. To reduce the time required to uncover those patterns, we want to take advantage of any techniques that allow us to quickly investigate different perspectives on the data.</p>
+<p>Graph rewriting involves the transformation of one graph to another through some set of operations. If we have a mechanism to efficiently implement and execute graph rewriting operations, we can develop a base representation for the data, the <em>data graph,</em> and apply graph rewriting operations as needed to the data graph to filter and transform the data for other analyses.</p>
+<p>One of the core concepts brought to bear when defining graph rewriting operations in Gremlin is the <em><a href="https://github.com/tinkerpop/gremlin/wiki/User-Defined-Steps">user-defined step</a></em>.  A user-defined step is a sequence of one or more atomic steps in a multi-relational graph. Through the use of user-defined steps, we are defining new definitions of adjacency and higher-level abstractions to utilize when operating on the data graph.</p>
+<p>My first application of user-defined steps was in the definition of a graph rewriting operation that would take a portion of the Enron email data graph and construct the 1.5-hop communication graph for a specified email address. Consider the diagram below.</p>
+<p><img src="UserDefinedStep.jpg" alt=""></p>
+<p>In the data graph, a given email message is represented by a collection of email address and message vertices. SENT and RECEIVED_BY edges specify the relationships between those addresses and the message. The communication graph represents the volume of communication between email addresses with weighted, directed edges. By defining the SENT_TO and RECEIVED_FROM steps, we can more easily express attributes of the data graph that are relevant to the construction of the communication graph.</p>
+<p>This is a trivial example relative to the range of possibilities that Gremlin enables. Many more complex operations can be easily expressed with <a href="https://github.com/tinkerpop/gremlin/wiki/Gremlin-Steps">Gremlin&rsquo;s syntax</a>. The <a href="https://www.youtube.com/watch?v=5wpTtEBK4-E">recent screencast</a> Marko did on Gremlin provides a better sense of its capabilities through a series of examples.</p>
+<p>Gremlin has recently migrated to Groovy as its host language. The opportunities available now are huge. I&rsquo;m looking forward to exploring the art of the possible with Groovy Gremlin in the future and sharing more results here. As we begin to discuss complete technology stacks that support EDA, I&rsquo;ll share more thoughts, and hopefully more examples, on ways the composition of Gremlin with other capabilities provides utility. At the moment, I&rsquo;m only limited by my lack of Groovy skills, not a lack of ideas to explore.</p>
+<p>[<a href="https://research.navigating-the-edge.net/posts/2011-01-exploring-complex-dynamic-graph-data-part-1/">Part 1 of the series</a>]</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/2011-01-managing-your-attention-portfolio/" class="left arrow">&#8592;</a>
+		<a href="/posts/2011-04-exploring-complex-dynamic-graph-data-part-3/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        <footer>
+   
+   <span>
+      &copy; <time datetime="2021-02-05 19:29:08.830914 -0700 MST m=&#43;0.081038392">2021</time> Chris Diehl
+   </span>
+</footer>
+
+    </body>
+</html>

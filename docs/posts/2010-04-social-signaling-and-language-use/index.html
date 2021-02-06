@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Social Signaling and Language Use &middot; Navigating The Edge</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Navigating The Edge" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Navigating The Edge</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/presentations/">
+                
+                <span>Presentations</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/publications/">
+                
+                <span>Publications</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Chris Diehl
+        <br>
+        <span>on&nbsp;</span><time datetime="2010-04-29 12:12:43 -0700 -0700">April 29, 2010</time>
+</div>
+
+		<h1 class="post-title">Social Signaling and Language Use</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>Consider the following email from Tim Belden to John Lavorato and Louise Kitchen. Recall that Tim Belden was indicted for his role in conceiving and executing various financial schemes that allowed Enron to profit significantly from energy markets. Through the analysis of the Enron email collection, we would like to understand who Belden was reporting to and who he was supervising during the time period of the California energy crisis.</p>
+<blockquote>
+<p><em>Date: August 2, 2001</em></p>
+<p><em>From: Tim Belden</em></p>
+<p><em>To: John Lavorato, Louise Kitchen</em></p>
+<p><em>Subject: Off-Site Travel Question</em></p>
+<p><em>The e-mail that was sent out many weeks ago about the off-site indicated that it would run from Wednesday night to Saturday AM. It is now running Thursday until Sunday. Calger has found a leased plane that costs roughly $13k for one roundtrip and a total of $20k for two round trips. I had already made arraingements to attend a wedding in Oregon on Saturday night. It is a good friend of mine and my wife&rsquo;s. It&rsquo;s in eastern Oregon and is about a four hour drive away. I see the following choices before me:</em></p>
+<ol>
+<li><em>Don&rsquo;t go to Colorado. Tell you guys that I&rsquo;m a family man and not a company man.</em></li>
+<li><em>Go to Colorado and fly home commercial on Friday night, leaving at about 4 PM. Incremental cost of flight would be $500.</em></li>
+<li><em>Go to Colorado and fly home on the rented plane on early Saturday afternoon. Incremental cost of flight would be $7,000.</em></li>
+<li><em>Don&rsquo;t go to wedding. Tell my wife that I&rsquo;m a company man and that it is critical that I ride mountain bikes with a bunch of 30-something Enron folks all weekend.</em></li>
+</ol>
+<p><em><span style="color: #000000;">While I have authority to place millions of dollars of the company&rsquo;s money at risk, I don&rsquo;t feel comfortable signing up for a $7,000 extra flight without talking to you guys.</span> #3, the jet set answer costs quite a bit more, but it dramatically increases the amount of time that I spend in Colorado. #2 is cost-effective but gives me less than 24 hours in Colorado. #4, while perhaps appealing to you, doesn&rsquo;t work for me. #2 is probably preferable to #1, just requires a lot of travel time to me.</em></p>
+<p><em>Any thoughts would be greatly appreciated.</em></p>
+</blockquote>
+<p>This email was one of the top ranked messages identified by our prototype system SocialRank as evidence in support of the rank scores for both Lavorato and Kitchen. Lavorato and Kitchen were identified as the top two most likely candidates to be Belden&rsquo;s superior. In fact, Belden routinely reported to both of them.</p>
+<p>This message provides the type of evidence we seek to confirm the existence of a manager-subordinate relationship. Examples such as this nominated by SocialRank make clear the difficulty of composing explicit search queries to identify such evidence. Yet once such examples are revealed, we have no difficulty in recognizing the social relationship of interest.</p>
+<p>A natural question at this point is: what features of the message are compelling to the machine? Each message was characterized simply by a vector of word unigram frequencies. No stop words were removed from the text. Here is the message content once again with significant terms highlighted.</p>
+<blockquote>
+<p><em>The e-mail that was sent out many weeks ago about the off-site indicated that it would run from Wednesday night <strong><span style="color: #c00000;">to</span></strong> Saturday AM. It is now running Thursday until Sunday. Calger has found a leased plane that costs roughly $13k for one roundtrip and a total of $20k for two round trips. I had already made arraingements <strong><span style="color: #c00000;">to</span></strong> attend a wedding in Oregon <strong><span style="color: #c00000;">on</span></strong> Saturday night. It is a good friend of mine and <strong><span style="color: #c00000;">my</span></strong> wife&rsquo;s. It&rsquo;s in eastern Oregon and is about a four hour drive away. I see the following choices before me:</em></p>
+<ol>
+<li><em>Don&rsquo;t go <strong><span style="color: #c00000;">to</span></strong> Colorado. Tell you guys that I&rsquo;m a family man and not a company man.</em></li>
+<li><em>Go <strong><span style="color: #c00000;">to</span></strong> Colorado and fly home commercial <strong><span style="color: #c00000;">on</span></strong> Friday night, leaving at about 4 PM. Incremental cost of flight would <strong><span style="color: #c00000;">be</span></strong> $500.</em></li>
+<li><em>Go <strong><span style="color: #c00000;">to</span></strong> Colorado and fly home <strong><span style="color: #c00000;">on</span></strong> the rented plane <strong><span style="color: #c00000;">on</span></strong> early Saturday afternoon. Incremental cost of flight would <strong><span style="color: #c00000;">be</span></strong> $7,000.</em></li>
+<li><em>Don&rsquo;t go <strong><span style="color: #c00000;">to</span></strong> wedding. Tell <strong><span style="color: #c00000;">my</span></strong> wife that I&rsquo;m a company man and that it is critical that I ride mountain bikes with a bunch of 30-something Enron folks all weekend.</em></li>
+</ol>
+<p><em>While I have authority <strong><span style="color: #c00000;">to</span></strong> place millions of dollars of the company&rsquo;s money at risk, I don&rsquo;t feel comfortable signing up for a $7,000 extra flight without talking <strong><span style="color: #c00000;">to</span></strong> you guys. #3, the jet set answer costs quite a bit more, but it dramatically increases the amount of time that I spend in Colorado. #2 is cost-effective but gives me less than 24 hours in Colorado. #4, while perhaps appealing <strong><span style="color: #c00000;">to</span></strong> you, doesn&rsquo;t work for me. #2 is probably preferable <strong><span style="color: #c00000;">to</span></strong> #1, just requires a lot of travel time <strong><span style="color: #c00000;">to</span></strong> me.</em></p>
+<p><em>Any thoughts would <strong><span style="color: #c00000;">be</span></strong> greatly appreciated.</em></p>
+</blockquote>
+<p>Surprisingly enough, the terms that matter in this message are function words (stop words), not content words. If one examines the weights in the linear ranker used by SocialRank, it becomes clear that function words make up a significant fraction of the most discriminative terms. For anyone coming from an information retrieval background, this feels unnatural. For IR tasks, we are accustomed to first removing function words from text prior to performing any processing because function words are seen as terms that carry little information. For social relationship identification tasks, this is precisely the wrong intuition.</p>
+<p>Some time after discovering this result, I had the opportunity to meet <a href="http://socialabacus.blogspot.com/">Kate Niederhoffer</a>, a social psychologist who has studied social signaling in language extensively. I explained to Kate what we had learned from the Enron email data in the context of manager-subordinate relationship identification. She was not surprised at all. In the social psychology literature, there are a number of studies of function word use in different social contexts. It is well understood that function words play a significant role in social signaling. Kate&rsquo;s graduate work along with that of her colleagues from <a href="https://www.words.live">Jamie Pennebaker&rsquo;s group at UT-Austin</a> provides a rich body of work to garner more perspective on the issue. Two review papers I would highlight are <a href="AnnualReview.pdf">here</a> and <a href="Chung&amp;JWP.pdf">here</a>.</p>
+<p>As my colleagues at JHU/APL and I have <a href="SocialCom09-Final.pdf">argued</a>, we must take a fresh look at a number of issues when thinking about building systems that support social query tasks such as social relationship identification. The example above points out one issue regarding features to support machine learning. There are many others to consider. This space will definitely keep us busy for some time to come with intriguing challenges and fascinating questions!</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/2010-04-describing-twitter/" class="left arrow">&#8592;</a>
+		<a href="/posts/2010-09-categorizing-communication-mediums/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        <footer>
+   
+   <span>
+      &copy; <time datetime="2021-02-05 19:29:08.831751 -0700 MST m=&#43;0.081875410">2021</time> Chris Diehl
+   </span>
+</footer>
+
+    </body>
+</html>

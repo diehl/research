@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Exploring Complex, Dynamic Graph Data - Part 1 &middot; Navigating The Edge</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Navigating The Edge" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Navigating The Edge</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/presentations/">
+                
+                <span>Presentations</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/publications/">
+                
+                <span>Publications</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Chris Diehl
+        <br>
+        <span>on&nbsp;</span><time datetime="2011-01-04 08:51:17 -0700 MST">January 4, 2011</time>
+</div>
+
+		<h1 class="post-title">Exploring Complex, Dynamic Graph Data - Part 1</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>When I was in graduate school in the late 90s working on computer vision problems, MATLAB was my environment of choice. It provided all the tools I required for analysis and then some. Life was simple and grand.</p>
+<p>Five years after leaving graduate school, I decided to take a dramatic turn in my research direction. Video surveillance no longer motivated me. Instead, I chose to explore problems at the interface between machine learning and the social sciences.</p>
+<p>The implication of this move in terms of data analysis was significant. My experience base was rooted firmly in the non-relational world. I needed a new bag of tricks.</p>
+<p>For my first foray into analyzing relational data, Python and MySQL were my friends. I rolled a lot of custom Python code to support my work in email analysis. While that code met my near-term needs, it provided limited benefit for future research objectives.</p>
+<p>Now that I&rsquo;m revisiting the Enron email dataset and thinking ahead to other types of social media, I&rsquo;ve been reconsidering my approach to exploratory data analysis (EDA) for this class of data. When thinking about the way forward, the first question that came to mind is the following.</p>
+<p><em>What is the analog to MATLAB / R for exploratory data analysis when one is working with complex, dynamic graph data?</em></p>
+<p>In contrast to non-relational (tabular) data, social media presents rich attribute and relational data, in structured and unstructured forms, that evolves over time. Such data is most naturally represented in a graph structure; although representational choices abound. The additional complexity introduces complications across the entire EDA process.</p>
+<p>To tease this apart further, it&rsquo;s worth reflecting on what capabilities we need to perform EDA. Four general capabilities come to mind.</p>
+<ul>
+<li><em>Persistence -</em> Provides a non-volatile representation of the data we intend to explore.</li>
+<li><em>Query</em> - Supports filtering and transformation operations to condition the data for analysis.</li>
+<li><em>Analysis -</em> Enables the synthesis and execution of complex analytics on the data.</li>
+<li><em>Visualization</em> - Facilitates rapid composition of a range of visualizations to interpret results.</li>
+</ul>
+<p>MATLAB and R are appealing because they offer these capabilities to the user in one integrated environment. This allows a user to compose a wide range of EDA processes with relative ease. To my knowledge, no analogous environment exists for the relational domain.</p>
+<p>One may argue that MATLAB and R already provide the means to work with relational data. Clearly many are using these environments to analyze relational data. In my view, this is a significant compromise. MATLAB and R are environments rooted in the non-relational world. By using tools from that world, we are accepting constraints on the types of questions we can ask of our data with relative ease. My sense is those restrictions are severe, preventing us from exploiting the richness available in the data.</p>
+<p>It&rsquo;s not terribly surprising that no comparable integrated environment exists for the relational domain as it&rsquo;s not clear to me the patterns of EDA are even well understood for this class of data. If no integrated environment exists, the next question is what EDA environments can we construct through the composition of different existing capabilities? What technology stacks can we realize that meet the above needs in some fashion? I&rsquo;ll share my thoughts and discoveries from the past two months in my next post.</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/2010-09-categorizing-communication-mediums/" class="left arrow">&#8592;</a>
+		<a href="/posts/2011-01-managing-your-attention-portfolio/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        <footer>
+   
+   <span>
+      &copy; <time datetime="2021-02-05 19:29:08.831045 -0700 MST m=&#43;0.081169569">2021</time> Chris Diehl
+   </span>
+</footer>
+
+    </body>
+</html>
