@@ -1,0 +1,14 @@
+baseURL = "https://research.navigating-the-edge.net"
+title = "Navigating The Edge"
+theme = "tale"
+
+[author]
+  name = "Chris Diehl"
+
+[markup]
+   [markup.goldmark]     
+      [markup.goldmark.renderer]        
+         unsafe = true
+
+[params]
+  css = ["css/custom.css"]

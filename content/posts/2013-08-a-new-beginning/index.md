@@ -1,0 +1,21 @@
+---
+title: A New Beginning
+date: 2013-08-12T10:59:41-07:00
+summary: "Friday, August 2nd marked my last official day as Jive's principal data scientist. Over 2+ years there, working closely
+ with Dave Gutelius, I gained a deeper perspective on enterprise social collaboration and ways in which new analytic capabilities
+ could impact the adoption of social collaboration tools. Moving forward, the time has come to pursue some ideas that have been
+ lingering on our minds for some time."
+---
+![](DataGuildShield.png#align-right)
+
+Friday, August 2nd marked my last official day as Jive's principal data scientist. Over 2+ years there, working closely with Dave Gutelius, I gained a deeper perspective on enterprise social collaboration and ways in which new analytic capabilities could impact the adoption of social collaboration tools. The overarching theme of our work at Jive was always the acceleration of organizational learning. In a future post, I will share one of the concepts we explored in depth which involved network analysis to detect emerging, substantive engagement among groups of users. During our time at Jive, we only scratched the surface in terms of what we believe is possible. Organizations, now more than ever, require new capabilities to be more responsive in dynamic, complex environments. This theme is one we will undoubtedly continue to explore in the future.
+
+Moving forward, the time has come to pursue some ideas that have been lingering on our minds for some time. When I left the national security community in 2011, I felt I had done all that I could within that context, tackling problems that were compelling to me. I understood well what was possible within the confines of the organizational and cultural constraints in the federal government and the associated R&D laboratories. While I was fortunate to have made a significant impact, I always felt more was possible. Regardless of the organizational context, the challenge of defining a compelling problem, assembling a great team and acquiring the resources to execute is always tough. My impatience grew with the increasing number of impediments that limited or halted progress toward execution on big ideas. I knew it was time to explore other avenues.
+
+What I discovered after leaving the national security community is that my concern about larger societal and global challenges persists. The lens through which I see the world remains unchanged. That may not sound surprising but at the time, I wasn't sure how my perspective and interests would evolve. One thing is certain: I am mission- and impact-driven. Purposeful work fulfills me. Our time is limited in this world so it's best to keep striving for significant outcomes. Even if they do not come to pass, one can feel satisfied in giving one's level best to get there.
+
+To that end, Dave and I, along with other friends and collaborators, have set out to launch The Data Guild. There are several underlying motivations for founding the Guild. First and foremost is to leverage a latent desire that we keep uncovering. Among many of the creatives that we interact with, there is disappointment over the types of problems that are being addressed by most entities. Many would like to tackle challenges that present a greater opportunity for positive change; yet the path to satisfying that desire is not obvious. For most, the choice seems clear: either make a living or make a difference. What if we can achieve both?
+
+For the toughest challenges we face today, we believe that diverse teams of broadly curious, creative and humble people will be required to synthesize bold new ideas. Therefore we seek to nurture a high-trust community of scientists, engineers, designers and other creatives that are passionate about leveraging data to meet a range of challenges. Collectively intelligent teams are based on openness and trust. Such relationships are not born overnight. By nurturing such relationships over time, more will become possible as the strength of the community grows. We dare not even predict the range of potential outcomes. Yet we believe firmly that the collective creativity will be a catalyst for many wonderful endeavors.
+
+More to follow as we move along this journey!

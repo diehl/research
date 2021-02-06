@@ -1,0 +1,34 @@
+---
+title: "The Social Relationship: Issues of Representation"
+date: 2009-12-23T14:13:15-07:00
+tags: [Social Relationship Identification]
+---
+In recent years, the domain of social network analysis (SNA) has become very popular among research communities outside the traditional SNA community in sociology. From the perspective of the sociologists, this has been a mixed blessing. The discipline of SNA, having a strong computational basis, stands to benefit from additional perspectives from other fields. Yet far too often, to the dismay of the sociologists, there is a lack of recognition of the importance of representational choices made prior to analysis. One must consider carefully the goals of the analysis when selecting the network representation and analytic method. Without such consideration, the analytical results can lead one to dubious conclusions.
+
+![](Enron.jpg#align-left)
+
+To continue our discussion of social relationship identification, we will focus on issues of representation in the context of a specific analytic goal. As a motivating scenario, we consider the case of the Enron scandal. Prior to its bankruptcy in December 2001, the Enron Corporation was one of the world’s leading energy companies, with core business in the generation and distribution of electricity and natural gas. Beginning in 1998 through 2001, members of Enron devised fraudulent schemes to manipulate various energy markets for financial gain. During the 2000-2001 time period, these schemes were responsible for exacerbating the California energy crisis as Enron misrepresented available supply and demand. The deception ultimately led to mounting losses that could no longer be concealed, resulting in a stunning collapse by the end of 2001 from its peak one year before.
+
+![](StunningCollapse.jpg#align-right)
+
+During the course of the US government’s investigation, a large collection of documents, emails and telephone calls were subpoenaed and made part of the public record, providing a rare glimpse inside a large corporation through the digital artifacts they created. The [email collection](http://www.cs.cmu.edu/~enron/) in particular consists of approximately 250,000 unique email messages collected from approximately 150 Enron email accounts. Given the complexity of the domain, the task of assembling a general picture of the events that transpired using the email data is monumental and remains daunting even with analytic tools to assist in the process.
+
+As is the case with many events of this nature, we begin with some known starting points. In the case of Enron, the corporation itself undertook a review of its trading practices with the assistance of the law firm Brobeck, Phleger and Harrison LLP. The [resulting memo](http://tinyurl.com/cqdvr6), detailing their understanding of the various trading strategies Enron employed, helped the government focus its inquiries on those schemes and the actions of the chief trader that developed them, Tim Belden. Ultimately Belden pled guilty to one count of conspiracy to commit wire fraud as part of a [plea bargain](http://tinyurl.com/cm3g8m).
+
+Once the memo highlighting Belden’s connection to the trading strategies was uncovered, a natural next step would have been to explore Belden’s activities in more detail, as captured in the email evidence, in order to answer some fundamental questions: Who did Belden report to and potentially take direction from? What organizational elements was he part of? Which employees and activities did Belden supervise? When did these activities take place relative to the known events associated with the California energy crisis?
+
+To gain some insights into the network structure surrounding Belden, one might begin by examining Belden's ego network during the period from January 2000 through November 2001 which covers the meteoric rise of Enron during the California energy crisis along with the subsequent fall toward eventual bankruptcy. The network shown below depicts Belden's ego network over this time period along with ties among the alters. Red nodes correspond to Enron email addresses and blue nodes to external addresses.  The presence of a directed edge indicates a minimum of 5 email messages were sent in the direction indicated.   
+
+As is evident, it is difficult to derive many insights from the network diagram.  With some additional filtering, one may be able to glean some structural cues about organizational groups that Belden was associated with.  Yet this representation fails to help us address questions regarding leadership and the timing of events within the company.  Analyzing a communication network is problematic due to the ambiguity in the relationship type.  A communication relationship may exist for a variety of reasons and exhibit multiple social relations (e.g. friendship, mentorship, trust).  The underlying social relations are most often what we are interested in to construct a more nuanced view of the organization.
+
+The absence of time in the representation is a critical issue for this task. Communication patterns within Enron clearly changed as the crisis unfolded (see for example [Diesner et al.](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1015&context=isr)) which may correspond to changes both in formal and informal networks. By examining a temporal projection of the network, we are unable to sequence relationship and group activities with events to understand what truly transpired.  
+
+Understanding the nature of relationships alone can present significant challenges. Typically we reduce relationships to static representations, avoiding the challenges brought on by the dynamics. Yet relationships are fundamentally dynamic entities that evolve both in terms of activity and meaning. Language provides rich signals to help us decipher the nature of the relationship. Although it is difficult to explicitly characterize these social signals and unrealistic to expect the analyst alone to interpret them when faced with volumes of data.
+
+Therefore our challenge is to develop analytics that will enhance the analyst's ability to discover social relations of interest and understand their evolution.  The analyst and the machine each play an important role in the discovery process. Only through their collaborative effort can the demands of the task be significantly reduced.  
+
+In future posts, we will examine the task of manager-subordinate relationship identification within the context of Enron while exploring a potential path toward significant reductions in the analytic burden.
+
+[Joint work with Lise Getoor (UMCP), Galileo Namata (UMCP), Jaime Montemayor (JHU/APL) and Mike Pekala (JHU/APL)]
+
+[Previous post in the series: [Social Relationship Identification: Defining the Task]({{<ref "/posts/2009-12-sri-defining-the-task">}})]
