@@ -1,7 +1,6 @@
 baseURL = "https://research.navigating-the-edge.net"
 title = "Navigating The Edge"
 theme = "tale"
-publishDir = "docs"
 
 [author]
   name = "Chris Diehl"
