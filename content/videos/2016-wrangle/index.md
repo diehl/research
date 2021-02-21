@@ -11,4 +11,4 @@ _build:
   </h2>
 </div>
 
-{{< youtube SC4g4_VXBFo >}}
+<video src="https://diehl-team-bucket.storage.fleek.co/videos/Digital Vulnerability - Characterizing Risks and Contemplating Responses - July 2016.mp4" width=100% controls>

@@ -11,4 +11,4 @@ _build:
   </h2>
 </div>
 
-{{< youtube ydVSpkXO5fY >}}
+<video src="https://diehl-team-bucket.storage.fleek.co/videos/Learning in Complex Environments - November 2014 - USF Analytics Meetup.mp4" width=100% controls>

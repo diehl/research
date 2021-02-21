@@ -11,4 +11,4 @@ _build:
   </h2>
 </div>
 
-{{< youtube 3JaZ--MpemM >}}
+<video src="https://diehl-team-bucket.storage.fleek.co/videos/Organizational Resilience in an Uncertain World - November 2014 - UC Berkeley.mp4" width=100% controls>
