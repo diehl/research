@@ -12,4 +12,4 @@ _build:
   </h2>
 </div>
 
-<video src="https://diehl-team-bucket.storage.fleek.co/videos/Learning in Complex Environments - November 2014 - USF Analytics Meetup.mp4" width=100% poster="usf_analytics.png" controls>
+<video src="https://storage.fleek-internal.com/diehl-team-bucket/videos/Learning in Complex Environments - November 2014 - USF Analytics Meetup.mp4" width=100% poster="usf_analytics.png" controls>

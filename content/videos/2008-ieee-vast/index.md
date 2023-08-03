@@ -11,4 +11,4 @@ _build:
   </h2>
 </div>
 
-<video src="https://diehl-team-bucket.storage.fleek.co/videos/socialrank-desktop.m4v" width=100% controls>
+<video src="https://storage.fleek-internal.com/diehl-team-bucket/videos/socialrank-desktop.m4v" width=100% controls>
